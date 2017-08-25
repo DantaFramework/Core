@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-- LayerX Core Bundle
+- Danta Core Bundle
 -
 - Copyright (C) 2017 Tikal Technologies, Inc. All rights reserved.
 -
@@ -21,10 +21,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>LayerX</groupId>
+        <groupId>Danta</groupId>
         <artifactId>Parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>https://github.com/layerx/Parent/pom.xml</relativePath>
+        <relativePath>https://github.com/DataFramework/Parent/pom.xml</relativePath>
     </parent>
     <artifactId>Core</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -37,18 +37,18 @@
                 <version>3.2.0</version>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>layerx.core</Bundle-SymbolicName>
-                        <Bundle-Name>LayerX Core</Bundle-Name>
+                        <Bundle-SymbolicName>danta.core</Bundle-SymbolicName>
+                        <Bundle-Name>Danta Core</Bundle-Name>
                         <Embed-Dependency>juffrou-reflect</Embed-Dependency>
                         <Export-Package>
-                            layerx.core.*
+                            danta.core.*
                         </Export-Package>
                         <Import-Package>
-                            layerx; resolution:=mandatory,
-                            layerx.api.*; resolution:=mandatory,
+                            danta; resolution:=mandatory,
+                            danta.api.*; resolution:=mandatory,
                             *;resolution:=optional
                         </Import-Package>
-                        <Bundle-Activator>layerx.core.CoreActivator</Bundle-Activator>
+                        <Bundle-Activator>danta.core.CoreActivator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
@@ -88,7 +88,7 @@
                                     <optimize>true</optimize>
                                     <osgiCompatibility>true</osgiCompatibility>
                                     <includes>
-                                        <include>layerx/**</include>
+                                        <include>danta/**</include>
                                     </includes>
                                 </configuration>
                             </execution>
@@ -100,7 +100,7 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>LayerX</groupId>
+            <groupId>Danta</groupId>
             <artifactId>API</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>

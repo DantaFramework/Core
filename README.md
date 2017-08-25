@@ -1,15 +1,15 @@
-# LayerX - Core Project
+# Danta - Core Project
 
-LayerX - Core Project is the core maven project contained source codes which implements the API and all platform specific maven project (i.e. LayerX - AEM Project) depend on.
+Danta - Core Project is the core maven project contained source codes which implements the API and all platform specific maven project (i.e. Danta - AEM Project) depend on.
 
 ## Documentation
 
- * Read our [official documentation](http://layerx.technologies.io/docs/) for more information.
+ * Read our [official documentation](http://danta.technologies.io/docs/) for more information.
 
 ## Prerequisites
 
- * [LayerX - Parent Project](https://github.com/layerx/Parent)
- * [LayerX - API Project](https://github.com/layerx/API)
+ * [Danta - Parent Project](https://github.com/DataFramework/Parent)
+ * [Danta - API Project](https://github.com/DataFramework/API)
  * Java 8
  * AEM 6.2 or later (for integration with AEM)
  * Jahia 7.2 or later (for integration with Jahia)
