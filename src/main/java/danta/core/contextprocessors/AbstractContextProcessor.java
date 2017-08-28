@@ -34,11 +34,11 @@ import org.slf4j.LoggerFactory;
 import static danta.Constants.LOW_PRIORITY;
 
 /**
- * User: joshuaoransky
- * Date: 10/30/13
- * Time: 5:01 PM
- * Purpose:
- * Location:
+ * Abstract Context Processor
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2013-10-30
  */
 @Component(componentAbstract = true)
 public abstract class AbstractContextProcessor<C extends ContentModel>

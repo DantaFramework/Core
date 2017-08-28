@@ -27,8 +27,13 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by joshuaoransky on 6/27/14.
+ * Plain Old Java Object Backed Map
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2014-06-27
  */
+
 public class POJOBackedMap extends AbstractMap<String, Object> {
 
     //TODO: Add lazy loading, caching of BeanContexts, support for nested beans, and asynchronous processing

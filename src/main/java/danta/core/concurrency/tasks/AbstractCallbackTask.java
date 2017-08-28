@@ -30,11 +30,11 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
 /**
- * User:     joshuaoransky
- * Date:     3/3/13
- * Time:     2:21 PM
- * Purpose:
- * Location:
+ * Abstract Callback Task
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2013-03-03
  */
 public class AbstractCallbackTask<Result>
         extends FutureTask<Result>

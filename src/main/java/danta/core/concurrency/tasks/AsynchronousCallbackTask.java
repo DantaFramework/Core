@@ -22,15 +22,6 @@ package danta.core.concurrency.tasks;
 import java.util.concurrent.Callable;
 
 /**
- * Created by IntelliJ IDEA.
- * User: joshuaoransky
- * Date: 5/7/12
- * Time: 12:39 PM
- * Location:
- * Purpose:
- */
-
-/**
  * This class allows a Task to be started that runs asynchronously, then passed the result of the background processing
  * to any Callbacks passed.
  * <p/>
@@ -71,7 +62,12 @@ import java.util.concurrent.Callable;
  *      }
  *  }
  * </pre>
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2013-05-07
  */
+
 public final class AsynchronousCallbackTask<Result>
         extends AbstractCallbackTask<Result> {
 

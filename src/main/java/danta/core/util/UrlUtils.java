@@ -23,7 +23,9 @@ package danta.core.util;
  * Simple utility class to assist
  * with URL path manipulation.
  *
- * @author dross
+ * @author      dross
+ * @version     1.0.0
+ * @since       2016-04-20
  */
 public class UrlUtils {
 

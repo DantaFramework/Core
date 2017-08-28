@@ -42,7 +42,10 @@ import java.lang.annotation.Target;
  * configuration works with this context processor
  * {@code exampleValues} A couple example values to help ensure proper usage
  * and generally reduce development time.
- * @author dross
+ *
+ * @author      dross
+ * @version     1.0.0
+ * @since       2016-07-14
  */
 @Documented
 @Retention(RetentionPolicy.CLASS)

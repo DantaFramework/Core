@@ -20,11 +20,11 @@
 package danta.core.concurrency.tasks;
 
 /**
- * User: joshuaoransky
- * Date: 5/7/12
- * Time: 12:37 PM
- * Location:
- * Purpose:
+ * Closure / Callback
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2012-05-07
  */
 public interface Callback<V> {
     /**

@@ -20,11 +20,11 @@
 package danta.core.concurrency.tasks;
 
 /**
- * User: joshuaoransky
- * Date: 5/24
- * Time: 0:10
- * Purpose:
- * Location:
+ * Asynchronous Executor
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2012-05-24
  */
 public interface AsynchronousExecutor<Result>
         extends Runnable {

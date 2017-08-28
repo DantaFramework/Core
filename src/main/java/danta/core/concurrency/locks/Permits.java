@@ -23,11 +23,11 @@ package danta.core.concurrency.locks;
 import java.util.concurrent.*;
 
 /**
- * User: joshuaoransky
- * Date: 1/3/14
- * Time: 23:18
- * Purpose:
- * Location:
+ * Permits
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2014-01-03
  */
 public class Permits {
 

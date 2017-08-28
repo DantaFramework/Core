@@ -30,7 +30,9 @@ import java.lang.annotation.*;
  * Value is the name of the boolean property that will define
  * whether the component is active or not.
  *
- * @author agleyzer
+ * @author      agleyzer
+ * @version     1.0.0
+ * @since       2016-07-14
  */
 @Retention (RetentionPolicy.RUNTIME)
 @Target (ElementType.TYPE)

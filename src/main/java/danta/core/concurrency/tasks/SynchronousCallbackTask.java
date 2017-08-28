@@ -71,6 +71,10 @@ import java.util.concurrent.Callable;
  *      }
  *  }
  * </pre>
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2012-05-24
  */
 public final class SynchronousCallbackTask<Result>
         extends AbstractCallbackTask<Result> {

@@ -30,11 +30,11 @@ import java.math.BigInteger;
 import java.util.*;
 
 /**
- * User: joshuaoransky
- * Date: 3/7
- * Time: 2:13
- * Purpose:
- * Location:
+ * Number Utils
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2016-03-07
  */
 public class NumberUtils {
 

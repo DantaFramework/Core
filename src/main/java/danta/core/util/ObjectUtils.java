@@ -28,11 +28,11 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * User: joshuaoransky
- * Date: 4/20
- * Time: 0:48
- * Purpose:
- * Location:
+ * Object Utils
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2016-04-20
  */
 public final class ObjectUtils {
 

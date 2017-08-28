@@ -31,7 +31,9 @@ import java.util.Comparator;
  * Note that this class is not intended to be used to order a sorted collection,
  * such as TreeSet.
  *
- * @author jabarca
+ * @author      jabarca
+ * @version     1.0.0
+ * @since       2016-05-24
  */
 public class DOMProcessorPriorityComparator
         implements Comparator<DOMProcessor> {

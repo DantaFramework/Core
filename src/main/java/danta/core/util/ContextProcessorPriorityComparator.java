@@ -28,6 +28,10 @@ import java.util.Comparator;
  * <p/>
  * Note that this class is not intended to be used to order a sorted collection,
  * such as TreeSet.
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2012-05-24
  */
 public class ContextProcessorPriorityComparator
         implements Comparator<ContextProcessor> {

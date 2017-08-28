@@ -36,13 +36,12 @@ import static danta.core.concurrency.tasks.EmptyCacheBehavior.WAIT;
 import static org.apache.sling.commons.scheduler.Scheduler.PROPERTY_SCHEDULER_CONCURRENT;
 
 /**
- * User:joshuaoransky
- * Date:5/16
- * Time:18:20
- * Purpose:
- * Location:
+ * Abstract Asynchronous Executor
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2014-05-16
  */
-
 @Component(componentAbstract = true, metatype = true, immediate = true)
 @Service({Runnable.class, AsynchronousExecutor.class})
 @Property(name = PROPERTY_SCHEDULER_CONCURRENT, boolValue = false)

@@ -34,10 +34,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Author:  jbarrera
- * Date:    08/08/16
- * Purpose:
- * Location:
+ * DOM Processing Engine
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2016-08-08
  */
 @Component
 @Service

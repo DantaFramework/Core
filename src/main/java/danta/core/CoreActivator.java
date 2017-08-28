@@ -26,6 +26,13 @@ import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Core Activator
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2012-05-24
+ */
 public class CoreActivator
         implements BundleActivator {
 

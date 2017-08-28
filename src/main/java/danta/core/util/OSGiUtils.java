@@ -40,6 +40,10 @@ import static danta.core.Constants.ERROR;
 
 /**
  * Helper utils for osgi
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2016-04-20
  */
 public class OSGiUtils {
     private static final Logger log = LoggerFactory.getLogger(OSGiUtils.class);

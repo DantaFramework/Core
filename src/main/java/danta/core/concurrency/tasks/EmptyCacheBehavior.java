@@ -30,6 +30,10 @@ package danta.core.concurrency.tasks;
  * <li>BLANK</li>
  * <li>BARF</li>
  * </ul>
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2012-05-24
  */
 public enum EmptyCacheBehavior {
     WAIT, BLANK, BARF;

@@ -38,10 +38,11 @@ import static danta.Constants.ENGINE_RESOURCE;
 import static danta.core.Constants.XK_COMPONENT_CATEGORY;
 
 /**
- * Author:  joshuaoransky
- * Date:    5/3/16
- * Purpose:
- * Location:
+ * Abstract Check Component Category Context Processor
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2016-05-03
  */
 @Component(componentAbstract = true)
 public abstract class AbstractCheckComponentCategoryContextProcessor<C extends ContentModel>

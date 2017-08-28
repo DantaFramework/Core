@@ -21,9 +21,15 @@ package danta.core;
 
 import danta.core.annotations.DantaProperty;
 
-import static danta.Constants.NS_XUMAK_AN;
 import static danta.Constants.NS_XUMAK_PN;
 
+/**
+ * Constants
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2012-05-24
+ */
 public class Constants {
 
     public static final String ERROR = "ERROR";

@@ -25,10 +25,11 @@ import org.apache.commons.collections.map.HashedMap;
 import java.util.Map;
 
 /**
- * Author:  joshuaoransky
- * Date:    4/29/16
- * Purpose:
- * Location:
+ * Execution Context Implementer
+ *
+ * @author      joshuaoransky
+ * @version     1.0.0
+ * @since       2016-04-29
  */
 public class ExecutionContextImpl
         implements ExecutionContext {
