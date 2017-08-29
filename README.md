@@ -4,7 +4,7 @@ Danta - Core Project is the core maven project contained source codes which impl
 
 ## Documentation
 
- * Read our [official documentation](http://danta.technologies.io/docs/) for more information.
+ * Read our [official documentation](http://danta.technologies.io/) for more information.
 
 ## Prerequisites
 
