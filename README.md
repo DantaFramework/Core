@@ -10,8 +10,8 @@ Danta - Core Project is the core maven project contained source codes which impl
 
 ## Prerequisites
 
- * [Danta - Parent Project](https://github.com/DataFramework/Parent)
- * [Danta - API Project](https://github.com/DataFramework/API)
+ * [Danta - Parent Project](https://github.com/DantaFramework/Parent)
+ * [Danta - API Project](https://github.com/DantaFramework/API)
  * Java 8
  * AEM 6.2 or later (for integration with AEM)
  * Jahia 7.2 or later (for integration with Jahia)
