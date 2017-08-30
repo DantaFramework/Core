@@ -4,10 +4,6 @@ Danta is the agnostic multi-platform templating engine. enables developers and I
 
 Danta - Core Project is the core maven project contained source codes which implements the API and all platform specific maven project (i.e. Danta - AEM Project) depend on.
 
-## Documentation
-
- * Read our [official documentation](http://danta.tikaltechnologies.io/docs) for more information.
-
 ## Prerequisites
 
  * [Danta - Parent Project](https://github.com/DantaFramework/Parent)
@@ -15,6 +11,37 @@ Danta - Core Project is the core maven project contained source codes which impl
  * Java 8
  * AEM 6.2 or later (for integration with AEM)
  * Jahia 7.2 or later (for integration with Jahia)
+
+## Documentation
+
+### Installation
+
+#### Adobe Experience Manager (AEM)
+
+  * Via AEM Package Manager, install [ACS AEM Commons 3.9.0](https://github.com/Adobe-Consulting-Services/acs-aem-commons/releases/tag/acs-aem-commons-3.9.0) or later
+  * Clone the following repositories into the same folder (i.e. C:\workspace\danta or /User/{username}/workspace/danta) 
+  then run the maven build command (refer to **Compile** section of README.md, for each repository) in the following order
+    * [Parent](https://github.com/DantaFramework/Parent)
+    * [API](https://github.com/DantaFramework/API)
+    * [Core](https://github.com/DantaFramework/Core)
+    * [AEM](https://github.com/DantaFramework/AEM)
+    * [AEM Demo](https://github.com/DantaFramework/AEMDemo)   
+    
+    **Note: for fresh installation, make sure to install ACS Common before running the maven build command**
+
+### Jahia
+
+  * Clone the following repositories into the same folder (i.e. C:\workspace\danta or /User/{username}/workspace/danta) 
+    then run the maven build command (refer to **Compile** section of README.md, for each repository) in the following order
+    * [Parent](https://github.com/DantaFramework/Parent)
+    * [API](https://github.com/DantaFramework/API)
+    * [Core](https://github.com/DantaFramework/Core)
+    * [JahiaDF](https://github.com/DantaFramework/JahiaDF)
+    * [JahiaDF Demo](https://github.com/DantaFramework/JahiaDFDemo)
+
+### Official documentation
+
+ * Read our [official documentation](http://danta.tikaltechnologies.io/docs) for more information.
 
 ## License
 
