@@ -48,6 +48,8 @@ import static danta.core.Constants.XK_COMPONENT_CATEGORY;
 public abstract class AbstractCheckComponentCategoryContextProcessor<C extends ContentModel>
         extends AbstractContextProcessor<C> {
 
+    private static final Set<String> DEFAULT_EMPTY_PREDICATE_SET = Collections.unmodifiableSet(Collections.emptySet());
+
     @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY, policy = ReferencePolicy.STATIC)
     protected ConfigurationProvider configurationProvider;
 
@@ -87,14 +89,14 @@ public abstract class AbstractCheckComponentCategoryContextProcessor<C extends C
     }
 
     public Set<String> anyOf() {
-        return Collections.emptySet();
+        return DEFAULT_EMPTY_PREDICATE_SET;
     }
 
     public Set<String> allOf() {
-        return Collections.emptySet();
+        return DEFAULT_EMPTY_PREDICATE_SET;
     }
 
     public Set<String> noneOf() {
-        return Collections.emptySet();
+        return DEFAULT_EMPTY_PREDICATE_SET;
     }
 }
