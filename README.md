@@ -41,7 +41,7 @@ Danta - Core Project is the core maven project contained source codes which impl
 
 ### Official documentation
 
-* Read our [official documentation](https://danta.tikaltechnologies.io/docs/aem/index.html) for more information.
+  * Read our [official documentation](https://danta.tikaltechnologies.io/docs/aem/index.html) for more information.
 
 ## License
 
