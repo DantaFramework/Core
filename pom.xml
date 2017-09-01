@@ -24,7 +24,7 @@
         <groupId>Danta</groupId>
         <artifactId>Parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>https://github.com/DantaFramework/Parent/pom.xml</relativePath>
+        <relativePath>../Parent/pom.xml</relativePath>
     </parent>
     <artifactId>Core</artifactId>
     <version>1.0.0-SNAPSHOT</version>
