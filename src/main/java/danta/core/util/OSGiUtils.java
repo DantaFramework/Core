@@ -21,7 +21,7 @@ package danta.core.util;
 
 import danta.core.annotations.BindToComponentContext;
 import danta.core.annotations.OptionalComponent;
-import org.apache.sling.commons.osgi.OsgiUtil;
+import org.apache.sling.commons.osgi.PropertiesUtil;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
 import org.osgi.framework.InvalidSyntaxException;
@@ -69,8 +69,7 @@ public class OSGiUtils {
         try {
             Field field = obj.getClass().getDeclaredField(propertyName);
 
-            log.debug("Binding {} as {} to {}", new String[]{
-                    propertyName, value.toString(), obj.getClass().getName()});
+            log.debug("Binding {} as {} to {}", propertyName, value.toString(), obj.getClass().getName());
 
             field.setAccessible(true);
 
@@ -111,7 +110,7 @@ public class OSGiUtils {
     }
 
     /**
-     * Commit suicide if property "enabled" is set to false
+     * Disable component if property "enabled" is set to false
      *
      * @param ctx component context
      */
@@ -122,7 +121,7 @@ public class OSGiUtils {
             return;
         }
 
-        boolean enabled = OsgiUtil.toBoolean(ctx.getProperties().get(oc.propertyName()), true);
+        boolean enabled = PropertiesUtil.toBoolean(ctx.getProperties().get(oc.propertyName()), true);
 
         if (!enabled) {
             String pid = (String) ctx.getProperties().get(Constants.SERVICE_PID);
