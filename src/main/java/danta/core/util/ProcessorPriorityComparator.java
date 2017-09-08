@@ -19,37 +19,27 @@
 
 package danta.core.util;
 
-import danta.api.DOMProcessor;
+import danta.api.Processor;
 
 import java.util.Comparator;
 
 
 /**
- * This class is used to sort a list of {@link DOMProcessor}. The list
+ * This class is used to sort a list of {@link Processor}. The list
  * is ordered in descending order based on the priority.
  * <p/>
  * Note that this class is not intended to be used to order a sorted collection,
  * such as TreeSet.
  *
- * @author      jabarca
+ * @author      dhughes
  * @version     1.0.0
- * @since       2016-05-24
+ * @since       2017-09-08
  */
-public class DOMProcessorPriorityComparator
-        implements Comparator<DOMProcessor> {
+public class ProcessorPriorityComparator
+        implements Comparator<Processor> {
 
-    /**
-     * Compares two {@code DOMProcessor} based on their priority, and is used mainly to sort a list of
-     * {@link DOMProcessor} in descending order based on the priority.
-     *
-     * @param  cp1 the first {@code DOMProcessor} to compare
-     * @param  cp2 the second {@code DOMProcessor} to compare
-     * @return the value {@code 0} if {@code cp1's priority == cp2's priority};
-     *         a value less than {@code 0} if {@code cp1's priority > cp2's priority}; and
-     *         a value greater than {@code 0} if {@code cp1's priority < cp1's priority}
-     */
     @Override
-    public int compare(DOMProcessor cp1, DOMProcessor cp2) {
+    public int compare(Processor cp1, Processor cp2) {
         return Integer.compare(cp2.priority(), cp1.priority());
     }
 }
