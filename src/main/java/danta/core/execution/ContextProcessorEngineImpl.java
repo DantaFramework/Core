@@ -50,9 +50,12 @@ import java.util.TreeMap;
 @Service
 public class ContextProcessorEngineImpl
         implements ContextProcessorEngine {
+
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
+
     @Reference(cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE, bind = "bindProcessor", unbind = "unbindProcessor", referenceInterface = ContextProcessor.class, policy = ReferencePolicy.DYNAMIC)
     private SortedMap<Integer, List<ContextProcessor>> contextProcessors = new TreeMap<>(Comparator.reverseOrder());
+
     @Override
     public List<String> execute(ExecutionContext executionContext, ContentModel contentModel)
             throws AcceptsException, ProcessException {
@@ -72,6 +75,7 @@ public class ContextProcessorEngineImpl
         }
         return currentProcessorChain;
     }
+
     public void bindProcessor(ContextProcessor processor) {
         List<ContextProcessor> contextProcessorsSamePriority = this.contextProcessors.get(processor.priority());
         if (contextProcessorsSamePriority == null) {
@@ -80,8 +84,10 @@ public class ContextProcessorEngineImpl
         contextProcessorsSamePriority.add(processor);
         contextProcessors.put(processor.priority(), contextProcessorsSamePriority);
     }
+
     public void unbindProcessor(ContextProcessor processor) {
         List<ContextProcessor> contextProcessorsSamePriority = this.contextProcessors.get(processor.priority());
         contextProcessorsSamePriority.remove(processor);
     }
+
 }

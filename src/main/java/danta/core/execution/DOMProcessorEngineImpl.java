@@ -22,7 +22,7 @@ package danta.core.execution;
 import danta.api.DOMProcessor;
 import danta.api.DOMProcessorEngine;
 import danta.api.ExecutionContext;
-import danta.core.util.DOMProcessorPriorityComparator;
+import danta.core.util.ProcessorPriorityComparator;
 import org.apache.felix.scr.annotations.*;
 import org.jsoup.nodes.Document;
 import org.osgi.framework.BundleContext;
@@ -46,7 +46,7 @@ public class DOMProcessorEngineImpl
         implements DOMProcessorEngine {
 
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
-    static final DOMProcessorPriorityComparator DOM_PROCESSOR_PRIORITY_COMPARATOR = new DOMProcessorPriorityComparator();
+    static final ProcessorPriorityComparator PRIORITY_COMPARATOR = new ProcessorPriorityComparator();
 
     @Reference(cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE, bind = "bindDOMProcessor", unbind = "unbindDOMProcessor", referenceInterface = DOMProcessor.class, policy = ReferencePolicy.DYNAMIC)
     private List<DOMProcessor> domProcessors = new ArrayList<>();
@@ -69,7 +69,7 @@ public class DOMProcessorEngineImpl
 
     private void bindDOMProcessor(DOMProcessor domProcessor) {
         domProcessors.add(domProcessor);
-        Collections.sort(domProcessors, DOM_PROCESSOR_PRIORITY_COMPARATOR);
+        Collections.sort(domProcessors, PRIORITY_COMPARATOR);
     }
 
     private void unbindDOMProcessor(DOMProcessor domProcessor) {
