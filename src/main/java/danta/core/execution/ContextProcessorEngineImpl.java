@@ -51,7 +51,7 @@ import java.util.TreeMap;
 public class ContextProcessorEngineImpl
         implements ContextProcessorEngine {
 
-    protected final Logger log = LoggerFactory.getLogger(this.getClass());
+    protected final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
     @Reference(cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE, bind = "bindProcessor", unbind = "unbindProcessor", referenceInterface = ContextProcessor.class, policy = ReferencePolicy.DYNAMIC)
     private SortedMap<Integer, List<ContextProcessor>> contextProcessors = new TreeMap<>(Comparator.reverseOrder());
@@ -68,7 +68,7 @@ public class ContextProcessorEngineImpl
                         currentProcessorChain.add(processor.getClass().getName());
                     }
                 } catch (Exception e) {
-                    log.error("Exception in parallel stream execution", e);
+                    LOG.error("Exception in parallel stream execution", e);
                     throw new RuntimeException(e);
                 }
             });

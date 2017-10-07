@@ -36,18 +36,18 @@ import org.slf4j.LoggerFactory;
 public class CoreActivator
         implements BundleActivator {
 
-    private final Logger log = LoggerFactory.getLogger(getClass());
+    private final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @Activate
     public void start(BundleContext bundleContext)
             throws Exception {
-        log.info("Activated!!!");
+        LOG.info("Activated!!!");
     }
 
     @Deactivate
     public void stop(BundleContext bundleContext)
             throws Exception {
-        log.info("DeActivated!!!");
+        LOG.info("DeActivated!!!");
     }
 }
 

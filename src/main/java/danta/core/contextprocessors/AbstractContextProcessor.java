@@ -44,7 +44,7 @@ import static danta.Constants.LOW_PRIORITY;
 public abstract class AbstractContextProcessor<C extends ContentModel>
         implements ContextProcessor<C> {
 
-    protected final Logger log = LoggerFactory.getLogger(this.getClass());
+    protected final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
     protected ComponentContext componentContext;
 
