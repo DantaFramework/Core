@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public class CoreActivator
         implements BundleActivator {
 
-    private static final Logger LOG = LoggerFactory.getLogger(getClass());
+    private static final Logger LOG = LoggerFactory.getLogger(CoreActivator.class);
 
     @Activate
     public void start(BundleContext bundleContext)

@@ -51,7 +51,7 @@ import java.util.TreeMap;
 public class ContextProcessorEngineImpl
         implements ContextProcessorEngine {
 
-    private static final Logger LOG = LoggerFactory.getLogger(this.getClass());
+    private static final Logger LOG = LoggerFactory.getLogger(ContextProcessorEngineImpl.class);
 
     @Reference(cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE, bind = "bindProcessor", unbind = "unbindProcessor", referenceInterface = ContextProcessor.class, policy = ReferencePolicy.DYNAMIC)
     private SortedMap<Integer, List<ContextProcessor>> contextProcessors = new TreeMap<>(Comparator.reverseOrder());

@@ -45,7 +45,7 @@ import java.util.List;
 public class DOMProcessorEngineImpl
         implements DOMProcessorEngine {
 
-    private static final Logger LOG = LoggerFactory.getLogger(this.getClass());
+    private static final Logger LOG = LoggerFactory.getLogger(DOMProcessorEngineImpl.class);
     static final ProcessorPriorityComparator PRIORITY_COMPARATOR = new ProcessorPriorityComparator();
 
     @Reference(cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE, bind = "bindDOMProcessor", unbind = "unbindDOMProcessor", referenceInterface = DOMProcessor.class, policy = ReferencePolicy.DYNAMIC)
