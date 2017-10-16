@@ -46,7 +46,7 @@ import static danta.core.Constants.ERROR;
  * @since       2016-04-20
  */
 public class OSGiUtils {
-    private static final Logger log = LoggerFactory.getLogger(OSGiUtils.class);
+    private static final Logger LOG = LoggerFactory.getLogger(OSGiUtils.class);
 
     /**
      * To be called from by Service Activate methods.  This will automatically
@@ -69,7 +69,7 @@ public class OSGiUtils {
         try {
             Field field = obj.getClass().getDeclaredField(propertyName);
 
-            log.debug("Binding {} as {} to {}", propertyName, value.toString(), obj.getClass().getName());
+            LOG.debug("Binding {} as {} to {}", propertyName, value.toString(), obj.getClass().getName());
 
             field.setAccessible(true);
 
@@ -78,7 +78,7 @@ public class OSGiUtils {
             // array and value is not, and then use reflection to create such array. For
             // more info, see http://download.oracle.com/javase/tutorial/reflect/special/index.html
             if (field.getType().isArray() && !value.getClass().isArray()) {
-                log.debug("Converting value {} to a single element array", value);
+                LOG.debug("Converting value {} to a single element array", value);
 
                 // create a single-element array
                 Object array = Array.newInstance(field.getType().getComponentType(), 1);
@@ -91,7 +91,7 @@ public class OSGiUtils {
             field.set(obj, value);
 
         } catch (Exception e) {
-            log.warn("Could not bind compontent property: " + propertyName, e);
+            LOG.warn("Could not bind compontent property: " + propertyName, e);
         }
     }
 
@@ -125,7 +125,7 @@ public class OSGiUtils {
 
         if (!enabled) {
             String pid = (String) ctx.getProperties().get(Constants.SERVICE_PID);
-            log.info("disabling component {}", pid);
+            LOG.info("disabling component {}", pid);
 
             // at this point this is the only way to reliably disable a component
             // it's going to show up as "unsatisfied" in Felix console.
@@ -164,7 +164,7 @@ public class OSGiUtils {
         try {
             services = getServices(bundleContext, serviceType, null);
         } catch (Exception e) {
-            log.error(ERROR, e);
+            LOG.error(ERROR, e);
             services = new ArrayList(0);
         }
         return Collections.unmodifiableList(services);
@@ -175,7 +175,7 @@ public class OSGiUtils {
         try {
             services = (List) getServices(bundleContext, serviceType, filter);
         } catch (InvalidSyntaxException e) {
-            log.error(ERROR, e);
+            LOG.error(ERROR, e);
             services = new ArrayList<>();
         }
         return (services.size() > 0) ? services.get(0) : null;
