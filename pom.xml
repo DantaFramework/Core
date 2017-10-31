@@ -29,7 +29,17 @@
     <artifactId>Core</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
+
     <name>Danta Core</name>
+    <description>The Danta Core project</description>
+    <url>https://github.com/DantaFramework/Core</url>
+
+    <scm>
+        <connection>scm:git:git://github.com/DantaFramework/Core.git</connection>
+        <developerConnection>scm:git:ssh://github.com/DantaFramework/Core.git</developerConnection>
+        <url>https://github.com/DantaFramework/Core/tree/master</url>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
