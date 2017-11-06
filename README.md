@@ -62,22 +62,7 @@ Read [here](CONTRIBUTING.md) for more information.
 
 ## Deploy to Jahia
 
-Edit your Maven settings.xml (usually in ~/.m2/settings.xml) to add the following profile :
-
-        <profile>
-            <id>jahia-local</id>
-            <properties>
-                <jahia.deploy.targetServerType>tomcat</jahia.deploy.targetServerType>
-                <jahia.deploy.targetServerVersion>7</jahia.deploy.targetServerVersion>
-                <jahia.deploy.targetServerDirectory><path_to_your_digital_factory_folder>/tomcat</jahia.deploy.targetServerDirectory>
-            </properties>
-        </profile>
-
-Make sure you modify the jahia.deploy.targetServerDirectory to point to the /tomcat directory inside your Jahia installation.
-
-Then you should be able to deploy your module using the following Maven command:
-
-    mvn clean install jahia:deploy -P jahia-local
+    mvn clean install -Pdeploy-jahia
     
 ## Credit
 
