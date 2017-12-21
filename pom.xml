@@ -54,10 +54,12 @@
                             juffrou-reflect,org.mozilla.javascript,antlr4-runtime,commons-lang3,handlebars
                         </Embed-Dependency>
                         <Export-Package>
-                            danta.core.*,
+                            danta.core.*
+                        </Export-Package>
+                        <_exportcontents>
                             com.github.jknack.handlebars.*,
                             com.github.jknack.*
-                        </Export-Package>
+                        </_exportcontents>
                         <Import-Package>
                             danta; resolution:=mandatory,
                             danta.api.*; resolution:=mandatory,
