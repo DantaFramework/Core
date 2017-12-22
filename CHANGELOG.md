@@ -1,7 +1,7 @@
 # Changelog
 
 ### Unreleased
-- This release contains common functionality in the implementations of the template content model for AEM and Jahia.
+- This version contains common functionality in the implementations of the template content model for AEM and Jahia.
 
 ### 1.0.1
 - Changed project groupId from "danta" to "io.tikaltechnologies.danta".
