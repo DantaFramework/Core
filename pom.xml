@@ -50,10 +50,16 @@
                     <instructions>
                         <Bundle-SymbolicName>danta.core</Bundle-SymbolicName>
                         <Bundle-Name>Danta Core</Bundle-Name>
-                        <Embed-Dependency>juffrou-reflect</Embed-Dependency>
+                        <Embed-Dependency>
+                            juffrou-reflect,org.mozilla.javascript,antlr4-runtime,commons-lang3,handlebars
+                        </Embed-Dependency>
                         <Export-Package>
                             danta.core.*
                         </Export-Package>
+                        <_exportcontents>
+                            com.github.jknack.handlebars.*,
+                            com.github.jknack.*
+                        </_exportcontents>
                         <Import-Package>
                             danta; resolution:=mandatory,
                             danta.api.*; resolution:=mandatory,
