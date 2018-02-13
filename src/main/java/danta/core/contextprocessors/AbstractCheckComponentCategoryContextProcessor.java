@@ -25,15 +25,12 @@ import danta.api.configuration.Configuration;
 import danta.api.configuration.ConfigurationProvider;
 import danta.api.configuration.Mode;
 import danta.api.exceptions.AcceptsException;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.ReferenceCardinality;
-import org.apache.felix.scr.annotations.ReferencePolicy;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
+import static danta.Constants.CONFIGURATION_PROVIDER;
 import static danta.Constants.ENGINE_RESOURCE;
 import static danta.core.Constants.XK_COMPONENT_CATEGORY;
 
@@ -44,14 +41,10 @@ import static danta.core.Constants.XK_COMPONENT_CATEGORY;
  * @version     1.0.0
  * @since       2016-05-03
  */
-@Component(componentAbstract = true)
 public abstract class AbstractCheckComponentCategoryContextProcessor<C extends ContentModel>
         extends AbstractContextProcessor<C> {
 
     private static final Set<String> DEFAULT_EMPTY_PREDICATE_SET = Collections.unmodifiableSet(Collections.emptySet());
-
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY, policy = ReferencePolicy.STATIC)
-    protected ConfigurationProvider configurationProvider;
 
     @Override
     public boolean accepts(final ExecutionContext executionContext)
@@ -61,6 +54,7 @@ public abstract class AbstractCheckComponentCategoryContextProcessor<C extends C
             Object resource = executionContext.get(ENGINE_RESOURCE);
 
             if(resource != null) {
+                ConfigurationProvider configurationProvider = (ConfigurationProvider) executionContext.get(CONFIGURATION_PROVIDER);
                 Configuration configuration = configurationProvider.getFor(resource);
                 if (configuration != null ) {
                     Collection<String> compCategories = configuration.asStrings(XK_COMPONENT_CATEGORY, Mode.MERGE);

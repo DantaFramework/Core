@@ -1,6 +1,7 @@
 # Changelog
 
 ### Unreleased
+- Changed Felix SCR annotations by the official OSGi Declarative Services annotations.
 - Added abstract class AbstractTemplateContentModelImpl with common functionality in the implementations of the template content model for AEM and Jahia.
 
 ### 1.0.1

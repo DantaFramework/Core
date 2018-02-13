@@ -25,11 +25,11 @@ import danta.api.ContextProcessorEngine;
 import danta.api.ExecutionContext;
 import danta.api.exceptions.AcceptsException;
 import danta.api.exceptions.ProcessException;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.ReferenceCardinality;
-import org.apache.felix.scr.annotations.ReferencePolicy;
-import org.apache.felix.scr.annotations.Service;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
@@ -46,14 +46,16 @@ import java.util.TreeMap;
  * @version     1.0.0
  * @since       2016-07-14
  */
-@Component
-@Service
+@Component(
+        service = ContextProcessorEngine.class,
+        immediate = true
+)
 public class ContextProcessorEngineImpl
         implements ContextProcessorEngine {
 
     private static final Logger LOG = LoggerFactory.getLogger(ContextProcessorEngineImpl.class);
 
-    @Reference(cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE, bind = "bindProcessor", unbind = "unbindProcessor", referenceInterface = ContextProcessor.class, policy = ReferencePolicy.DYNAMIC)
+    @Reference(cardinality = ReferenceCardinality.MULTIPLE, bind = "bindProcessor", unbind = "unbindProcessor", service = ContextProcessor.class, policy = ReferencePolicy.DYNAMIC)
     private SortedMap<Integer, List<ContextProcessor>> contextProcessors = new TreeMap<>(Comparator.reverseOrder());
 
     @Override

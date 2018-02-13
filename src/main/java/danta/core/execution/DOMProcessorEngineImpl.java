@@ -23,7 +23,11 @@ import danta.api.DOMProcessor;
 import danta.api.DOMProcessorEngine;
 import danta.api.ExecutionContext;
 import danta.core.util.ProcessorPriorityComparator;
-import org.apache.felix.scr.annotations.*;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
+import org.osgi.service.component.annotations.Activate;
 import org.jsoup.nodes.Document;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
@@ -40,15 +44,17 @@ import java.util.List;
  * @version     1.0.0
  * @since       2016-08-08
  */
-@Component
-@Service
+@Component(
+        service = DOMProcessorEngine.class,
+        immediate = true
+)
 public class DOMProcessorEngineImpl
         implements DOMProcessorEngine {
 
     private static final Logger LOG = LoggerFactory.getLogger(DOMProcessorEngineImpl.class);
     static final ProcessorPriorityComparator PRIORITY_COMPARATOR = new ProcessorPriorityComparator();
 
-    @Reference(cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE, bind = "bindDOMProcessor", unbind = "unbindDOMProcessor", referenceInterface = DOMProcessor.class, policy = ReferencePolicy.DYNAMIC)
+    @Reference(cardinality = ReferenceCardinality.MULTIPLE, bind = "bindDOMProcessor", unbind = "unbindDOMProcessor", service = DOMProcessor.class, policy = ReferencePolicy.DYNAMIC)
     private List<DOMProcessor> domProcessors = new ArrayList<>();
 
     @Override

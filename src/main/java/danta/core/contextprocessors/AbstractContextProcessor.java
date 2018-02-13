@@ -25,8 +25,7 @@ import danta.api.ExecutionContext;
 import danta.api.exceptions.AcceptsException;
 import danta.api.exceptions.ProcessException;
 import danta.core.util.OSGiUtils;
-import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +39,6 @@ import static danta.Constants.LOW_PRIORITY;
  * @version     1.0.0
  * @since       2013-10-30
  */
-@Component(componentAbstract = true)
 public abstract class AbstractContextProcessor<C extends ContentModel>
         implements ContextProcessor<C> {
 
