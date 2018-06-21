@@ -60,18 +60,24 @@ public class ContextProcessorEngineImpl
     public List<String> execute(ExecutionContext executionContext, ContentModel contentModel)
             throws AcceptsException, ProcessException {
         List<String> currentProcessorChain = Collections.synchronizedList(new ArrayList<>());
+
         for (List<ContextProcessor> processorsSamePriority : contextProcessors.values()) {
-            processorsSamePriority.parallelStream().forEach(processor -> {
-                try {
-                    if (processor.accepts(executionContext)) {
-                        processor.process(executionContext, contentModel);
-                        currentProcessorChain.add(processor.getClass().getName());
+
+            if (processorsSamePriority != null) {
+                processorsSamePriority.parallelStream().forEach(processor -> {
+                    try {
+                        if (processor.accepts(executionContext)) {
+                            processor.process(executionContext, contentModel);
+                            currentProcessorChain.add(processor.getClass().getName());
+                        }
+                    } catch (Exception e) {
+                        LOG.error("Exception in parallel stream execution", e);
+                        throw new RuntimeException(e);
                     }
-                } catch (Exception e) {
-                    LOG.error("Exception in parallel stream execution", e);
-                    throw new RuntimeException(e);
-                }
-            });
+                });
+
+
+            }
         }
         return currentProcessorChain;
     }
