@@ -60,7 +60,13 @@ Read [here](CONTRIBUTING.md) for more information.
 
 ## Deploy to AEM
 
+Build to author instance
+
     mvn clean install -Pdeploy-aem
+
+Build to publish instance
+
+    mvn clean install -Pdeploy-aem -Daem.server=http://localhost:4503
 
 ## Deploy to Jahia
 
