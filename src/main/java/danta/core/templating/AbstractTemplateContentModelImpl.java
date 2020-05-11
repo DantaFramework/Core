@@ -98,6 +98,7 @@ public abstract class AbstractTemplateContentModelImpl
     public AbstractTemplateContentModelImpl setAsIsolated(final String path, final Object value) {
         return set(path, value, ScopeLocality.ISOLATED);
     }
+
     /**
      * Set Attribute name to value. Attributes are not included in static representations of the ContentModel.
      * For example, a JSON representation provided to clients. They are also not included in any list of model keys or
@@ -217,12 +218,9 @@ public abstract class AbstractTemplateContentModelImpl
     }
 
     private AbstractTemplateContentModelImpl isolateToCurrentScope(final Map<String, Object> isolatedModelData) {
-        JSONObject currentScopeData = currentScopeData();
-        synchronized (currentScopeData) {
-            currentScopeData().merge(wrap(isolatedModelData));
-            invalidateJSONString();
-            return this;
-        }
+        currentScopeData().merge(wrap(isolatedModelData));
+        invalidateJSONString();
+        return this;
     }
 
     private Context rootContext() {
